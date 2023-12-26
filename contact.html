@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a href="#">FrozenBug.</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="index.html"   style="--navAni:1">Home</a></li>
+                <li><a href="about.html" style="--navAni:2">About</a></li>
+                <li><a href="portfolio.html" style="--navAni:4">Portfolio</a></li>
+                <li><a href="#" class="active" style="--navAni:5">Contact</a></li>
+            </ul>
+            <label class="mode">
+                <input type="checkbox" id="darkModeToggle">
+                <i class='bx bxs-moon'></i>
+            </label>
+        </div>
+    </header>
+
+
+    <section class="container">
+        <div class="main">
+
+            <div class="detail">
+                <h1><span style="color:#f9532d;">Contact</span> Me</h1>
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/aakif-osmani-b0331b223/" style="--socialAni:1"><i
+                            class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/whaat_a_drag?igsh=ZXI3OG8xanRmczAw&utm_source=qr"
+                        style="--socialAni:2"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://github.com/Frozen-Bugg" style="--socialAni:3"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button onclick="openEmailClient()">Contact Me</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function openEmailClient() {
+                var name = document.getElementById('name').value;
+                var message = document.getElementById('message').value;
+
+                var subject = "Contact from Portfolio";
+
+                // Construct the mailto link
+                var mailtoLink = "mailto:" + encodeURIComponent("aakif.education@gmail.com") + "?subject=" + encodeURIComponent(subject) +
+                    "&body=" + encodeURIComponent("Name: " + name + "\n\nMessage: \n" + message);
+
+                // Open the default email client
+                window.location.href = mailtoLink;
+            }
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+</body>
+
+</html>

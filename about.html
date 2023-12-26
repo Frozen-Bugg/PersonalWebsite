@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a href="#">FrozenBug.</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="index.html" style="--navAni:1">Home</a></li>
+                <li><a href="#"  class="active" style="--navAni:2">About</a></li>
+                <li><a href="portfolio.html" style="--navAni:4">Portfolio</a></li>
+                <li><a href="contact.html" style="--navAni:5">Contact</a></li>
+            </ul>
+            <label class="mode">
+                <input type="checkbox" id="darkModeToggle">
+                <i class='bx bxs-moon'></i>
+            </label>
+        </div>
+    </header>
+
+
+    <section class="container">
+        <div class="main">
+            
+            <div class="detail">
+                <h1><span style="color:#f9532d;">Who</span> Am I?</h1><br><br>
+                <p>I'm a Computer Science student at KIIT University with a strong foundation in Data Structures and Algorithms, driven by a passion for technology and a relentless commitment to honing my skills.<br>
+                    <br> With a particular focus on mastering C and C++, I have also delved deep into solving numerous coding challenges on platforms like LeetCode, continuously enhancing my problem-solving abilities.<br><br>
+                    My interests are not limited to coding alone;<br> I am eager to explore the realms of app development, data science, and artificial intelligence in the near future. My relentless pursuit of knowledge and my dedication to cultivating a versatile skill set make me an enthusiastic and forward-thinking tech enthusiast.
+                </p>  <br><br>
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/aakif-osmani-b0331b223/" style="--socialAni:1"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/whaat_a_drag?igsh=ZXI3OG8xanRmczAw&utm_source=qr" style="--socialAni:2"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://github.com/Frozen-Bugg" style="--socialAni:3"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+</body>
+
+</html>
